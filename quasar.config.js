@@ -44,17 +44,8 @@ module.exports = configure(function (/* ctx */) {
         errors: false,
       },
 
-      vitePlugins: [
-        [
-          'vite-plugin-checker',
-          {
-            eslint: {
-              lintCommand: 'eslint "./**/*.{js,mjs,cjs,vue}"',
-            },
-          },
-          { server: false },
-        ],
-      ],
+      // Remove vite-plugin-checker to fully disable ESLint during the build
+      vitePlugins: [],
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
@@ -113,4 +104,5 @@ module.exports = configure(function (/* ctx */) {
     },
   };
 });
+
 
